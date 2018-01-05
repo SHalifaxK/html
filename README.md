@@ -1,2 +1,2 @@
 # html
-Simple html+css page
+Simple html+css (leiskat) page
