@@ -1,15 +1,18 @@
 body {
-    background: #999;
-    color: blue;
-    font-family: arial;
+    margin: 0;
 }
 
-h1 {
-    color: #333;
+header {
+    background: #989;
+    color: white;
 }
-.sec {
-    color: green;
+header h1 {
+    margin: 0;
 }
-#spessu {
-    color: red;
+nav ul {
+    margin: 0;
+}
+nav ul li {
+    display: inline-block;
+    list-style-type: none;
 }
