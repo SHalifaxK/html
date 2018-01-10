@@ -1,2 +1,2 @@
 # html
-Simple html+css page
+Simple html+css+javascript page/s
