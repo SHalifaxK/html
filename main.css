@@ -1,0 +1,10 @@
+body {
+    background: aqua;
+}
+
+.buttons {
+    float: right;
+}
+.info {
+    display: block;
+}
