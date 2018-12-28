@@ -1,36 +1,32 @@
-let customer = [];
+const express = require('express');
+const app = express();
 
-function Henk(id,f_name,l_name){
-    this.id = id;
-    this.f_name= f_name;
-    this.l_name=l_name;
+app.use(express.urlencoded());
+
+let id = 0;
+let customers = [];
+
+function Cust(id, fname,sname,lname, HETU=1){
+	this.id = id;
+	this.fname = fname;
+	this.sname = sname;
+	this.lname = lname;
+	this.HETU = HETU;
 }
 
-function getValues() {
+app.post('/submit-form', (req,res) => {
+	id++;
+	Custo = new Cust(id, req.body.fname, req.body.sname, req.body.lname);
+	const tiedot = req.body.fname + ' ' + req.body.sname + ' ' + req.body.lname;
+	customers.push(Custo);
+	console.log(tiedot);
+	console.log(customers);
+	res.json(customers);
+	res.end();
+});
 
-    let id = document.getElementById("id").value;
-    let f_name = document.getElementById("f_name").value;
-    let l_name = document.getElementById("l_name").value;
+app.get('/', (req,res) => {
+	res.sendFile(__dirname + '/form.html');
+});
 
-    h = new Henk(id,f_name,l_name);
-
-    console.log(id);
-    console.log(f_name);
-    console.log(l_name);
-
-    alert("Id: "+ h.id + " First: "+ h.f_name + " Last: "+ h.l_name);
-    // let tmp = ("Id: "+ id + "First: "+ f_name + "Last: "+ l_name);
-    let tmp = ("Id: "+ h.id + "\nFirst: "+ h.f_name + "\nLast: "+ h.l_name);
-    console.log(tmp);
-    customer.push(tmp)
-}
-    
-function ne() {
-    document.getElementById("id").value = "";
-    document.getElementById("f_name").value = "";
-    document.getElementById("l_name").value = "";
-    console.log(customer);
-}
-function disp() {
-    alert(customer);
-}
+app.listen(8084);
