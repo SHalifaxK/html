@@ -1,0 +1,32 @@
+Edelliseen versioon in muutettu vain reitit eri kansioon.
+Syy tälle on yksinkertaisesti ylläpidettävyys, esim. jos sinulla on 
+useanpi reitti ja eri toiminnallisuutta niissä niin koodi tulee helposti '
+turhan pitkäksi ja luettavuus kärsii.
+
+Reitit siis erilliseen kansioon routes:
+-> Teet filu pri.js kansion routes alle (./routes/pri.js)
+Filun sisältö:
+
+	const express = require('express');
+	const router = express.Router();
+
+	router.get('/', (req,res,next) => {
+		const test = 
+		{
+			name: 'Jeff',
+			age: 27
+		}
+		res.json(test);
+	});
+
+	module.exports = router;
+
+Käytetään nyt pri.js filua index.js filussa (projectin juuressa):
+
+	const express = require('express');
+	const app = express();
+
+	const pri = require('./routes/pri');
+	app.use('/def', pri); 
+
+	app.listen(3001);
