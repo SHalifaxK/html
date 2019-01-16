@@ -21,7 +21,7 @@ Filun sisältö:
 
 	module.exports = router;
 
-Käytetään nyt pri.js filua index.js filussa (projectin juuressa):
+Käytetään nyt pri.js filua index.js filussa (projektin juuressa):
 
 	const express = require('express');
 	const app = express();
